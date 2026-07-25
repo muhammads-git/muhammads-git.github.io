@@ -149,11 +149,11 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justi
 
 <section class="hero" id="top">
   <div class="hero-bg-text">PRODUCTS</div>
-  <div class="hero-eyebrow">Backend-First Developer · Available for Freelance Work</div>
+  <div class="hero-eyebrow">Software Developer · Backend, Full Stack & APIs · Open for Freelance Work</div>
   <h1 class="hero-name">Muhammad<br/><em>Hammad</em></h1>
-  <p class="hero-desc">I build complete products, not just APIs — the backend, the database, the auth, and the interface people actually use. FastAPI, PostgreSQL, Redis, and enough Jinja2/JS to ship the whole thing. One client's already live in production.</p>
+  <p class="hero-desc">You have a business problem. I build the product that solves it — backend, database, auth, and the interface your customers click through. Not a prototype. Not a mockup. A system that stays up and works, like the one already live for a paying client right now.</p>
   <div class="hero-cta">
-    <a href="#contact" class="btn-primary">Start a Project</a>
+    <a href="#contact" class="btn-primary">Message Me</a>
     <a href="#projects" class="btn-ghost">See the Work</a>
   </div>
   <div class="hero-scroll">
@@ -166,10 +166,10 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justi
   <div class="section-label">00 — About</div>
   <div class="about-grid">
     <div>
-      <h2 class="about-headline reveal">One person, the <em>whole product</em></h2>
+      <h2 class="about-headline reveal">One developer, the <em>whole product</em></h2>
       <div class="about-body reveal">
-        <p>Software Engineering student at Hazara University who builds backend-heavy products end to end — the API, the database, the auth, and a working interface on top, without handing pieces off to other people.</p>
-        <p>I've shipped a production e-commerce platform for a paying client (live on Railway) and I'm currently building NexusAPI, a multi-tenant SaaS project-management backend. Every project below is real and running — nothing here is a mockup.</p>
+        <p>I build backend-heavy products end to end — API, database, auth, admin, and a working interface on top — as one person, not a hand-off between five. That's fewer meetings, fewer miscommunications, and a system one person actually understands top to bottom.</p>
+        <p>I've shipped a production e-commerce platform for a paying client, live on Railway right now, and I'm currently building NexusAPI, a multi-tenant SaaS backend. Every project below is real and running — nothing here is a demo built just to look good on a portfolio.</p>
       </div>
     </div>
     <div class="stats-grid reveal">
@@ -200,25 +200,25 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justi
       <div class="project-header" style="margin-bottom:.6rem">
         <div class="project-name" style="font-size:22px">Backend & API Development</div>
       </div>
-      <p class="project-desc" style="margin-bottom:0">The core of the job: REST APIs built on FastAPI or Flask, with proper auth (JWT/OAuth2), validated request/response schemas, and a database structure that won't fall apart at scale.</p>
+      <p class="project-desc" style="margin-bottom:0">Your app needs somewhere to store data, log users in safely, and handle requests without falling over. I build that layer — FastAPI or Flask, proper auth (JWT/OAuth2), validated data, a database structure that holds up as you grow.</p>
     </div>
     <div class="skill-group reveal" style="padding:2rem 0">
       <div class="project-header" style="margin-bottom:.6rem">
         <div class="project-name" style="font-size:22px">Full Product Builds</div>
       </div>
-      <p class="project-desc" style="margin-bottom:0">End-to-end delivery for founders who need one person to own the whole thing — backend, database, admin panel, and a server-rendered interface (Jinja2/HTML/CSS/JS) users can actually click through, not just an API spec.</p>
+      <p class="project-desc" style="margin-bottom:0">You have an idea, not five separate contractors. I take it from nothing to a working product — backend, database, admin panel, and an interface your customers actually click through — as one person, start to finish.</p>
     </div>
     <div class="skill-group reveal" style="padding:2rem 0">
       <div class="project-header" style="margin-bottom:.6rem">
         <div class="project-name" style="font-size:22px">E-Commerce & Order Systems</div>
       </div>
-      <p class="project-desc" style="margin-bottom:0">Product catalogs, cart and checkout flow, order lifecycle tracking, transactional email — the parts of an online store that have to work correctly every single time.</p>
+      <p class="project-desc" style="margin-bottom:0">Catalog, cart, checkout, order tracking, and the email that confirms it. The parts of an online store that lose you money if they're built wrong — I've already shipped one of these live.</p>
     </div>
     <div class="skill-group reveal" style="padding:2rem 0">
       <div class="project-header" style="margin-bottom:.6rem">
         <div class="project-name" style="font-size:22px">Performance & Caching</div>
       </div>
-      <p class="project-desc" style="margin-bottom:0">Slow endpoints, repeated DB hits, no caching layer — I fix that. Redis caching strategies, async task queues (ARQ) for anything that shouldn't block a response, and query-level optimization.</p>
+      <p class="project-desc" style="margin-bottom:0">If your site is slow, it's costing you customers right now. I diagnose the bottleneck and fix it — Redis caching, async task queues so nothing blocks a response, and query-level tuning.</p>
     </div>
   </div>
 </section>
@@ -312,6 +312,31 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justi
       <div class="project-num">01</div>
       <div class="project-content">
         <div class="project-header">
+          <div class="project-name">Perfumania E-Commerce</div>
+          <span class="project-badge">Live in Production · Client Project</span>
+        </div>
+        <p class="project-desc">Built and shipped for a paying client — this one's the real proof. A working online store handling browsing, cart, checkout, order tracking, and email notifications, live and in use today.</p>
+        <ul class="project-bullets">
+          <li>Deployed on Railway with pydantic-settings env separation for dev/prod</li>
+          <li>Argon2 + Bcrypt dual-hashing strategy with session management</li>
+          <li>Transactional email via fastapi-mail for order confirmations and registration</li>
+          <li>Full order lifecycle tracking with PostgreSQL + SQLAlchemy ORM</li>
+        </ul>
+        <div class="project-stack">
+          <span class="stack-tag">FastAPI</span>
+          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">SQLAlchemy</span>
+          <span class="stack-tag">Railway</span>
+          <span class="stack-tag">Jinja2</span>
+        </div>
+      </div>
+      <a href="https://perfumania-shop.up.railway.app" class="project-link" target="_blank">Live ↗</a>
+    </div>
+
+    <div class="project-item reveal">
+      <div class="project-num">02</div>
+      <div class="project-content">
+        <div class="project-header">
           <div class="project-name">AI-Powered URL Shortener</div>
           <span class="project-badge">Featured</span>
         </div>
@@ -336,31 +361,6 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justi
     </div>
 
     <div class="project-item reveal">
-      <div class="project-num">02</div>
-      <div class="project-content">
-        <div class="project-header">
-          <div class="project-name">Perfumania E-Commerce</div>
-          <span class="project-badge">Live in Production</span>
-        </div>
-        <p class="project-desc">Built and shipped for a paying client — this one's the real proof. A working online store handling browsing, cart, checkout, order tracking, and email notifications, live and in use today.</p>
-        <ul class="project-bullets">
-          <li>Deployed on Railway with pydantic-settings env separation for dev/prod</li>
-          <li>Argon2 + Bcrypt dual-hashing strategy with session management</li>
-          <li>Transactional email via fastapi-mail for order confirmations and registration</li>
-          <li>Full order lifecycle tracking with PostgreSQL + SQLAlchemy ORM</li>
-        </ul>
-        <div class="project-stack">
-          <span class="stack-tag">FastAPI</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">SQLAlchemy</span>
-          <span class="stack-tag">Railway</span>
-          <span class="stack-tag">Jinja2</span>
-        </div>
-      </div>
-      <a href="https://perfumania-shop.up.railway.app" class="project-link" target="_blank">Live ↗</a>
-    </div>
-
-    <div class="project-item reveal">
       <div class="project-num">03</div>
       <div class="project-content">
         <div class="project-header">
@@ -379,6 +379,29 @@ footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justi
           <span class="stack-tag">Jinja2</span>
           <span class="stack-tag">HTML/CSS</span>
           <span class="stack-tag">JavaScript</span>
+        </div>
+      </div>
+      <a href="https://github.com/muhammads-git" class="project-link" target="_blank">GitHub ↗</a>
+    </div>
+
+    <div class="project-item reveal">
+      <div class="project-num">04</div>
+      <div class="project-content">
+        <div class="project-header">
+          <div class="project-name">NexusAPI — Multi-Tenant SaaS Backend</div>
+          <span class="project-badge">In Progress</span>
+        </div>
+        <p class="project-desc">A multi-tenant project-management backend, currently in active development — built to demonstrate tenant isolation, role permissions, and API design at SaaS scale.</p>
+        <ul class="project-bullets">
+          <li>Multi-tenant data isolation at the database layer, one backend serving many organizations</li>
+          <li>Role-based permission system scoped per tenant</li>
+          <li>Designed around the same API and auth patterns used in the shipped projects above</li>
+        </ul>
+        <div class="project-stack">
+          <span class="stack-tag">FastAPI</span>
+          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">SQLAlchemy</span>
+          <span class="stack-tag">JWT</span>
         </div>
       </div>
       <a href="https://github.com/muhammads-git" class="project-link" target="_blank">GitHub ↗</a>
