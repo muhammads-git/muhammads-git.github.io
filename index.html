@@ -1,148 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Muhammad Hammad — Backend-First Full Product Development</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Hammad — Backend Engineer</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0a0a0a;
-  --surface:#111111;
-  --border:#1e1e1e;
-  --border-mid:#2a2a2a;
-  --text:#f0ede8;
-  --muted:#6b6866;
-  --accent:#c8f560;
-  --accent-dim:#9bbf3c;
-  --serif:'DM Serif Display',serif;
-  --sans:'Inter',sans-serif;
-  --mono:'JetBrains Mono',monospace;
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
-::selection{background:var(--accent);color:#0a0a0a}
-a{color:inherit;text-decoration:none}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid transparent;transition:all .3s}
-nav.scrolled{background:rgba(10,10,10,.92);border-color:var(--border);backdrop-filter:blur(12px)}
-.nav-logo{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.05em}
-.nav-links{display:flex;gap:2rem}
-.nav-links a{font-size:13px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--text)}
-
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2.5rem 5rem;position:relative;overflow:hidden}
-.hero-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(80px,18vw,240px);color:transparent;-webkit-text-stroke:1px #1c1c1c;white-space:nowrap;user-select:none;pointer-events:none;letter-spacing:-.02em;line-height:1}
-.hero-eyebrow{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s .2s forwards}
-.hero-name{font-family:var(--serif);font-size:clamp(48px,9vw,120px);line-height:.95;letter-spacing:-.02em;margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s .35s forwards}
-.hero-name em{font-style:italic;color:var(--accent)}
-.hero-desc{max-width:520px;font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:2.5rem;opacity:0;animation:fadeUp .8s .5s forwards}
-.hero-cta{display:flex;gap:1rem;align-items:center;opacity:0;animation:fadeUp .8s .65s forwards}
-.btn-primary{background:var(--accent);color:#0a0a0a;padding:.75rem 1.75rem;font-size:13px;font-weight:600;letter-spacing:.04em;border-radius:2px;transition:transform .15s,background .2s}
-.btn-primary:hover{background:#d4ff6a;transform:translateY(-1px)}
-.btn-ghost{border:1px solid var(--border-mid);color:var(--muted);padding:.75rem 1.75rem;font-size:13px;letter-spacing:.04em;border-radius:2px;transition:all .2s}
-.btn-ghost:hover{border-color:var(--muted);color:var(--text)}
-.hero-scroll{position:absolute;bottom:2rem;right:2.5rem;display:flex;align-items:center;gap:.75rem;font-family:var(--mono);font-size:11px;color:var(--muted);animation:fadeIn 1s 1s forwards;opacity:0}
-.scroll-line{width:40px;height:1px;background:var(--border-mid)}
-
-section{padding:6rem 2.5rem}
-.section-label{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:3rem;display:flex;align-items:center;gap:1rem}
-.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
-
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px}
-.about-headline{font-family:var(--serif);font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing:-.01em;margin-bottom:2rem}
-.about-headline em{font-style:italic;color:var(--accent)}
-.about-body{color:var(--muted);font-size:16px;line-height:1.8}
-.about-body p+p{margin-top:1rem}
-.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
-.stat{background:var(--bg);padding:1.75rem;display:flex;flex-direction:column;gap:.5rem}
-.stat-num{font-family:var(--serif);font-size:42px;line-height:1;color:var(--accent)}
-.stat-label{font-size:12px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
-
-.skills-wrap{max-width:900px}
-.skill-group{border-top:1px solid var(--border);padding:1.5rem 0}
-.skill-group:last-child{border-bottom:1px solid var(--border)}
-.skill-group-row{display:flex;align-items:baseline;gap:2rem}
-.skill-cat{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;min-width:120px;flex-shrink:0}
-.skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
-.skill-tag{font-family:var(--mono);font-size:12px;color:var(--text);border:1px solid var(--border-mid);padding:.35rem .8rem;border-radius:2px;transition:all .2s}
-.skill-tag:hover{border-color:var(--accent);color:var(--accent)}
-
-.projects-wrap{max-width:1100px}
-.project-item{border-top:1px solid var(--border);display:grid;grid-template-columns:80px 1fr auto;gap:2rem;padding:2.5rem 0;align-items:start;transition:background .2s;cursor:default}
-.project-item:last-child{border-bottom:1px solid var(--border)}
-.project-num{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:.25rem}
-.project-header{display:flex;align-items:center;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap}
-.project-name{font-family:var(--serif);font-size:clamp(22px,3vw,32px);letter-spacing:-.01em;transition:color .2s}
-.project-badge{font-family:var(--mono);font-size:10px;background:rgba(200,245,96,.1);color:var(--accent);border:1px solid rgba(200,245,96,.2);padding:.2rem .6rem;border-radius:2px;letter-spacing:.05em;flex-shrink:0}
-.project-desc{color:var(--muted);font-size:15px;line-height:1.75;margin-bottom:1.25rem;max-width:620px}
-.project-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem}
-.project-bullets li{font-size:13px;color:var(--muted);padding-left:1rem;position:relative;line-height:1.6}
-.project-bullets li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:.1em}
-.project-stack{display:flex;flex-wrap:wrap;gap:.4rem}
-.stack-tag{font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--surface);padding:.2rem .6rem;border-radius:2px}
-.project-link{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--border-mid);padding:.6rem .9rem;border-radius:2px;white-space:nowrap;display:flex;align-items:center;gap:.4rem;align-self:flex-start;margin-top:.25rem;transition:all .2s}
-.project-link:hover{color:var(--accent);border-color:var(--accent)}
-.project-item:hover .project-name{color:var(--accent)}
-
-.resume-section{text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:5rem 2.5rem}
-.resume-label{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.5rem}
-.resume-headline{font-family:var(--serif);font-size:clamp(28px,4vw,48px);margin-bottom:2rem}
-.resume-headline em{font-style:italic;color:var(--accent)}
-.resume-btn{display:inline-flex;align-items:center;gap:.75rem;background:var(--accent);color:#0a0a0a;padding:1rem 2.5rem;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.05em;border-radius:2px;transition:transform .15s,background .2s}
-.resume-btn:hover{background:#d4ff6a;transform:translateY(-2px)}
-
-.contact-inner{max-width:700px}
-.contact-headline{font-family:var(--serif);font-size:clamp(36px,5vw,68px);line-height:1.05;letter-spacing:-.02em;margin-bottom:1.5rem}
-.contact-headline em{font-style:italic;color:var(--accent)}
-.contact-sub{color:var(--muted);font-size:16px;margin-bottom:3rem;line-height:1.7}
-.contact-links{display:flex;flex-direction:column;gap:0}
-.contact-row{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding:1.5rem 0}
-.contact-row:last-child{border-bottom:1px solid var(--border)}
-.contact-type{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
-.contact-value{font-family:var(--serif);font-size:clamp(20px,2.5vw,28px);transition:color .2s}
-.contact-row:hover .contact-value{color:var(--accent)}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
-@media(max-width:768px){
-  nav{padding:1rem 1.5rem}
-  .nav-links{display:none}
-  section{padding:4rem 1.5rem}
-  .about-grid{grid-template-columns:1fr;gap:2.5rem}
-  .project-item{grid-template-columns:1fr;gap:1rem;padding:2rem 0}
-  .project-num{display:none}
-  .project-link{align-self:flex-start;margin-top:.5rem}
-}
+:root{--glass:rgba(168,205,235,.55);--edge:rgba(255,255,255,.75);--ink:#13202e;--blue:#2a6ebb;--paper:#f6f9fd}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;font:13px/1.5 "Segoe UI","Trebuchet MS",Tahoma,sans-serif;color:var(--ink)}
+body{background:
+ radial-gradient(ellipse 60% 45% at 70% 8%,rgba(255,255,255,.55),transparent 60%),
+ radial-gradient(ellipse 90% 60% at 20% 110%,#0b5a6e,transparent 65%),
+ linear-gradient(160deg,#5fb4e8 0%,#2a7fc4 35%,#1c5f9e 60%,#0f3f78 100%)}
+#desk{position:absolute;inset:0 0 40px 0;padding:14px;display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-start;gap:6px}
+.ico{width:88px;padding:8px 4px;border:1px solid transparent;border-radius:3px;background:none;color:#fff;text-align:center;cursor:pointer;font:inherit;text-shadow:0 1px 3px #000a}
+.ico:hover,.ico:focus-visible{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5);outline:none}
+.ico i{display:grid;place-items:center;width:46px;height:46px;margin:0 auto 4px;border-radius:9px;font-style:normal;font-size:26px;background:linear-gradient(#fff9,#fff2);border:1px solid #fff8;box-shadow:0 2px 6px #0005}
+.win{position:absolute;display:flex;flex-direction:column;border-radius:8px;background:var(--glass);border:1px solid var(--edge);box-shadow:0 0 0 1px #0007,0 12px 40px #0008;backdrop-filter:blur(10px) saturate(1.4);padding:0 6px 6px;animation:pop .16s ease-out}
+.win.off{display:none}.win.top{box-shadow:0 0 0 1px #000a,0 18px 50px #000a}
+@keyframes pop{from{transform:scale(.94);opacity:0}}
+.bar{display:flex;align-items:center;gap:8px;height:30px;cursor:move;user-select:none;touch-action:none;color:#0a1a2b;text-shadow:0 0 8px #fff,0 0 8px #fff}
+.bar b{flex:1;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ctl{display:flex;border:1px solid #0006;border-top:0;border-radius:0 0 5px 5px;overflow:hidden}
+.ctl button{width:28px;height:19px;border:0;border-left:1px solid #0004;background:linear-gradient(#e8f0f8,#a9bdd2 50%,#94aac2 51%,#b6cade);cursor:pointer;font-size:11px}
+.ctl .x{width:46px;color:#fff;background:linear-gradient(#e8a094,#c8442f 50%,#b02a14 51%,#d4604a);text-shadow:0 0 3px #000}
+.ctl button:hover{filter:brightness(1.12)}
+.body{flex:1;overflow:auto;background:var(--paper);border:1px solid #0005;border-radius:2px;display:flex;min-height:0}
+.nav{width:190px;flex:none;background:linear-gradient(#eef3fa,#dfe9f5);border-right:1px solid #b9c8da;padding:8px 0;overflow:auto}
+.nav button{display:block;width:100%;text-align:left;padding:7px 12px;border:0;background:none;font:inherit;cursor:pointer;color:var(--ink)}
+.nav button:hover{background:#cfe3f8}.nav button[aria-selected=true]{background:linear-gradient(#dcebfb,#b8d6f4);box-shadow:inset 0 0 0 1px #7da8d6;font-weight:600}
+.nav small{display:block;font-weight:400;color:#51657a}
+.pane{flex:1;padding:18px 22px;overflow:auto;min-width:0}
+h1{font:600 24px/1.2 "Segoe UI",sans-serif;margin-bottom:4px}h2{font:600 15px "Segoe UI";color:var(--blue);margin:16px 0 6px;padding-bottom:3px;border-bottom:1px solid #c9d8ea}
+p{max-width:68ch;margin-bottom:8px}ul{padding-left:18px;max-width:68ch}li{margin-bottom:6px}
+.stat{display:inline-block;margin:6px 8px 8px 0;padding:8px 12px;border:1px solid #9fbddf;border-radius:4px;background:linear-gradient(#fff,#e6f0fb)}
+.stat b{display:block;font-size:20px;line-height:1.1;color:#0d4a8f}
+.tag{display:inline-block;margin:0 5px 5px 0;padding:1px 9px;border:1px solid #8fb2d9;border-radius:10px;background:#e9f2fc;font-size:12px}
+.lnk{color:var(--blue)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.card{padding:12px;border:1px solid #b9c8da;border-radius:4px;background:#fff}.card h3{font-size:14px;margin-bottom:6px}
+.meter{height:8px;border:1px solid #7c97b5;border-radius:4px;background:#dde7f2;overflow:hidden}.meter i{display:block;height:100%;background:linear-gradient(#9bdc75,#4aa52a)}
+pre{background:#0c1722;color:#bfe3ff;padding:10px 12px;border-radius:4px;font:12px/1.5 Consolas,monospace;overflow:auto;margin:8px 0}
+#bar{position:absolute;left:0;right:0;bottom:0;height:40px;display:flex;align-items:center;gap:4px;padding:0 6px 0 4px;background:linear-gradient(#cfe4f7aa,#6a9bc9aa 48%,#3b6ea0aa 52%,#5d92c4aa);border-top:1px solid #fffa;backdrop-filter:blur(10px)}
+#orb{width:36px;height:36px;border-radius:50%;border:1px solid #fff9;background:radial-gradient(circle at 35% 30%,#fff,#7fd0ff 35%,#1565b8 80%);box-shadow:0 0 10px #4bf8;cursor:pointer;font-size:17px}
+#tasks{flex:1;display:flex;gap:4px;overflow:hidden}
+.task{max-width:150px;flex:1;height:30px;padding:0 10px;border:1px solid #fff6;border-radius:3px;background:linear-gradient(#fff5,#fff1);color:#fff;font:inherit;text-shadow:0 1px 2px #000b;cursor:pointer;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.task.on{background:linear-gradient(#fff8,#fff3);box-shadow:inset 0 0 8px #fff8}
+#clock{color:#fff;text-shadow:0 1px 2px #000;text-align:center;font-size:12px;line-height:1.2;padding:0 8px}
+#menu{position:absolute;left:4px;bottom:42px;width:260px;background:linear-gradient(90deg,#fff 70%,#dce9f7);border:1px solid #0007;border-radius:6px;box-shadow:0 8px 30px #0008;padding:6px;display:none}
+#menu.on{display:block}#menu button{display:flex;gap:10px;align-items:center;width:100%;padding:7px 10px;border:1px solid transparent;border-radius:3px;background:none;font:inherit;cursor:pointer;text-align:left}
+#menu button:hover{background:#cfe3f8;border-color:#8fb2d9}
+@media(max-width:700px){.win{inset:0 0 40px 0!important;width:auto!important;height:auto!important;border-radius:0}.body{flex-direction:column}.nav{width:auto;display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid #b9c8da;padding:0}.nav button{white-space:nowrap;width:auto}.nav small{display:none}.pane{padding:14px}.ico{width:76px}#desk{flex-direction:row}}
+@media(prefers-reduced-motion:reduce){.win{animation:none}}
 </style>
 </head>
 <body>
+<div id="desk"></div>
+<div id="menu"></div>
+<div id="bar"><button id="orb" aria-label="Start menu">⊞</button><div id="tasks"></div><div id="clock"></div></div>
 
-<nav id="navbar">
-  <div class="nav-logo">HAMMAD.DEV // BACKEND</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+<script>
+const P=[
+{n:"ByteBattle",s:"Real-time leaderboard engine",t:["FastAPI","Redis ZSET","PostgreSQL"],d:"Sep–Oct 2026",
+ what:"A competitive game backend that ranks players live. The leaderboard was the bottleneck: every refresh ran a JOIN + GROUP BY across the full score table.",
+ build:"Moved ranking out of PostgreSQL into a Redis Sorted Set. Reads hit ZREVRANGE for the top 20; writes go through an atomic write-through path so the database and cache update together.",
+ value:["Identified the real bottleneck (disk-bound aggregation on every read) and moved the computation to the data structure built for it.","Atomic write-through keeps Redis and Postgres in sync, and Postgres stays the source of truth if the cache layer fails.","Proved the gain with concurrent read stress tests instead of guessing."],
+ stats:[["12 s → 19 ms","median latency"],["Top 20","O(log N) lookups"]],code:"ZADD board score player_id\nZREVRANGE board 0 19 WITHSCORES"},
+{n:"NexusAPI",s:"Multi-tenant SaaS project management backend",t:["FastAPI","PostgreSQL","Redis","WebSockets","SQLAlchemy Async"],d:"May–Jun 2026",
+ what:"The backend for a Jira-style tool where many organizations share one deployment: orgs, projects, tasks, members, live updates.",
+ build:"Every protected route verifies an ownership chain (task → project → organization → membership) before touching data. Writes run inside AsyncSession blocks with row-level locks. Hot reads sit behind a Redis cache with write-through invalidation and a 5-minute TTL.",
+ value:["Fixed a real cross-tenant data leak by moving authorization into the data path, not just the login check.","Row-level locks stop concurrent writes from silently overwriting each other.","Cache invalidation is part of the write path, so users never read stale data for long."],
+ stats:[["4-level","ownership check"],["5 min","cache TTL"]],code:"task → project → organization → membership\nreject if any link is missing"},
+{n:"VoicOps",s:"Voice-to-infrastructure assistant",t:["FastAPI","Docker","Terraform","Deepgram","Docker Compose"],d:"Aug 2026 · Hackathon",
+ what:"Speak what you want deployed; get infrastructure code back. Built for the AI Alibaba Hackathon Pakistan and selected for the national build phase.",
+ build:"Audio is transcribed with Deepgram, turned into Dockerfiles, compose files and Terraform, then run through hadolint, yamllint and terraform validate before anything is shown. The FastAPI pipeline is fully async with multiple parsing workers.",
+ value:["Generated infrastructure is never trusted: a validation engine checks every output.","Non-blocking pipeline handles parallel transcriptions without stalling the event loop.","Multi-stage Docker builds and declarative environments keep runs reproducible."],
+ stats:[["3 linters","gate every output"],["Async","parallel transcription"]],code:"voice → text → IaC → hadolint\n                      → yamllint\n                      → terraform validate"},
+{n:"AI URL Shortener",s:"Short links with AI features and a fast redirect path",t:["FastAPI","PostgreSQL","Redis","ARQ"],d:"Jan–Apr 2026",
+ what:"A URL shortener API with compute-heavy generative features that must not slow down the core redirect.",
+ build:"Slow AI work goes to an ARQ task queue, away from the request thread. Redis uses two layers: short code → row ID and row ID → long URL, so one source of truth is easy to invalidate.",
+ value:["Keeps the event loop free by queueing heavy work.","Two-layer index means one update clears every cached copy of a link.","API responses stay under 50 ms."],
+ stats:[["< 50 ms","API response"],["2 layers","Redis index"]],code:"code → row_id\nrow_id → long_url"},
+{n:"Perfume Store Backend",s:"Freelance client project, live in production",t:["FastAPI","PostgreSQL","Jinja2","Supabase Storage","Railway"],d:"Jun–Jul 2026",
+ what:"An e-commerce backend for a real client's perfume store, delivered and deployed.",
+ build:"Static assets live in Supabase Object Storage, separate from transactional data. The database stores pointers to those files, so relational integrity holds and uploads survive redeploys.",
+ value:["Learned that container disks are not permanent storage: images moved out of the app server.","Delivered to a paying client with real deployment constraints."],
+ stats:[["Live","client project"],["Decoupled","assets vs data"]],code:"app server → PostgreSQL (pointers)\n           → Supabase Storage (files)"}];
+const SK=[["Backend & APIs",["Python","FastAPI","Flask","REST design","WebSockets","SQLAlchemy (Async)"],90],
+["Data & caching",["PostgreSQL","SQL","Redis Sorted Sets","Redis Hashes / Strings","Supabase Storage","Cache invalidation"],85],
+["Async & queues",["asyncio event loop","ARQ task queue","Row-level locking","Background workers"],80],
+["DevOps & testing",["Docker","Docker Compose","Terraform","GitHub Actions","Locust load testing","Git"],70]];
+const GH="https://github.com/muhammads-git",LI="https://www.linkedin.com/in/m-hammad",MAIL="mailto:sirhammad760@gmail.com";
+const tags=a=>a.map(x=>`<span class="tag">${x}</span>`).join("");
+const A={
+about:{t:"About Me",i:"👤",w:720,h:520,r:()=>`<div class="pane"><h1>Muhammad Hammad</h1><p>Backend engineer building production-style Python systems. Third-year Software Engineering student at Hazara University, Mansehra, graduating May 2027.</p>
+<h2>What I care about</h2><p>Data isolation, caching layers, database optimization and low-level server behavior. I build things to find where they break, then fix the cause.</p>
+<div><span class="stat"><b>5</b>backend projects</span><span class="stat"><b>12 s → 19 ms</b>biggest latency win</span><span class="stat"><b>1</b>live client delivery</span></div>
+<h2>Looking for</h2><p>Internships and junior backend roles, local or remote.</p>
+<p><a class="lnk" href="${GH}" target="_blank" rel="noopener">GitHub</a> · <a class="lnk" href="${LI}" target="_blank" rel="noopener">LinkedIn</a> · <a class="lnk" href="${MAIL}">sirhammad760@gmail.com</a></p></div>`},
+projects:{t:"My Projects",i:"📁",w:960,h:600,r:()=>`<div class="nav" role="tablist">${P.map((p,k)=>`<button role="tab" data-k="${k}" aria-selected="${k==0}">${p.n}<small>${p.d}</small></button>`).join("")}</div><div class="pane" data-pane></div>`,
+ after(w){const pane=w.querySelector("[data-pane]"),bs=[...w.querySelectorAll(".nav button")];const show=k=>{const p=P[k];bs.forEach((b,j)=>b.setAttribute("aria-selected",j==k));pane.innerHTML=`<h1>${p.n}</h1><p>${p.s}</p><div>${tags(p.t)}</div><div>${p.stats.map(s=>`<span class="stat"><b>${s[0]}</b>${s[1]}</span>`).join("")}</div><h2>What it is</h2><p>${p.what}</p><h2>How I built it</h2><p>${p.build}</p><pre>${p.code}</pre><h2>Engineering value</h2><ul>${p.value.map(v=>`<li>${v}</li>`).join("")}</ul><p><a class="lnk" href="${GH}" target="_blank" rel="noopener">View on GitHub</a></p>`;pane.scrollTop=0};bs.forEach((b,k)=>b.onclick=()=>show(k));show(0)}},
+skills:{t:"Technical Skills",i:"🛠️",w:760,h:540,r:()=>`<div class="pane"><h1>Technical Skills</h1><p>Grouped by what each skill is used for. Bars show how deep my hands-on use is, not years.</p><div class="grid">${SK.map(s=>`<div class="card"><h3>${s[0]}</h3><div class="meter" title="${s[2]}%"><i style="width:${s[2]}%"></i></div><p style="margin-top:8px">${tags(s[1])}</p></div>`).join("")}</div></div>`},
+exp:{t:"Experience & Education",i:"💼",w:700,h:480,r:()=>`<div class="pane"><h1>Experience</h1><h2>Freelance Web Developer · Perfume store backend</h2><p>Jun–Jul 2026 · Remote</p><p>Built and shipped the backend for a live client. Separated static assets (Supabase Object Storage) from transactional data, with database pointers to keep relational integrity across deployments.</p>
+<h2>Hackathon · AI Alibaba Hackathon Pakistan</h2><p>VoicOps was selected for the national engineering build phase.</p>
+<h2>Education</h2><p><b>Bachelor of Software Engineering</b>, Hazara University, Mansehra<br>Sep 2023 – May 2027</p></div>`},
+contact:{t:"Contact",i:"✉️",w:520,h:380,r:()=>`<div class="pane"><h1>Let’s talk</h1><p>Open to internships and junior backend roles. Email is fastest.</p><ul><li><a class="lnk" href="${MAIL}">sirhammad760@gmail.com</a></li><li><a class="lnk" href="${GH}" target="_blank" rel="noopener">github.com/muhammads-git</a></li><li><a class="lnk" href="${LI}" target="_blank" rel="noopener">linkedin.com/in/m-hammad</a></li><li>Mansehra, KPK, Pakistan</li></ul></div>`}};
 
-<div class="hero">
-  <div class="hero-bg-text">ENGINEER</div>
-  <div class="hero-eyebrow">Muhammad Hammad // Software Engineer</div>
-  <h1 class="hero-name">Building high-performance, <em>fault-isolated</em> backend architectures.</h1>
-  <p class="hero-desc">Specializing in Python async environments, low-latency in-memory data designs, and robust database layers built to scale effectively.</p>
-  <div class="hero-cta">
-    <a href="#projects" class="btn-primary">View Systems</a>
-    <a href="#contact" class="btn-ghost">Let's Talk</a>
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll to explore</span>
-    <div class="scroll-line"></div>
-  </div>
-</div>
-
+const desk=document.getElementById("desk"),tasks=document.getElementById("tasks"),menu=document.getElementById("menu");
+let z=10,n=0;const W={};
+Object.entries(A).forEach(([k,a])=>{desk.insertAdjacentHTML("beforeend",`<button class="ico" data-k="${k}"><i>${a.i}</i>${a.t.split(" &")[0]}</button>`);menu.insertAdjacentHTML("beforeend",`<button data-k="${k}"><span style="font-size:20px">${a.i}</span>${a.t}</button>`)});
+document.querySelectorAll(".ico,#menu button").forEach(b=>b.onclick=()=>{open(b.dataset.k);menu.classList.remove("on")});
+document.getElementById("orb").onclick=e=>{e.stopPropagation();menu.classList.toggle("on")};
+document.addEventListener("click",e=>{if(!menu.contains(e.target))menu.classList.remove("on")});
+function focus(k){const o=W[k];o.el.classList.remove("off");o.el.style.zIndex=++z;Object.values(W).forEach(x=>{x.el.classList.toggle("top",x===o);x.task.classList.toggle("on",x===o&&!x.el.classList.contains("off"))})}
+function open(k){if(W[k])return focus(k);const a=A[k],el=document.createElement("div");el.className="win";const vw=innerWidth,vh=innerHeight-40,w=Math.min(a.w,vw-20),h=Math.min(a.h,vh-20);n++;
+el.style.cssText=`width:${w}px;height:${h}px;left:${Math.max(10,(vw-w)/2+(n%5)*24-48)}px;top:${Math.max(10,(vh-h)/2+(n%5)*20-40)}px`;
+el.innerHTML=`<div class="bar"><span>${a.i}</span><b>${a.t}</b><div class="ctl"><button aria-label="Minimize" data-m>–</button><button aria-label="Maximize" data-x>▢</button><button class="x" aria-label="Close" data-c>✕</button></div></div><div class="body">${a.r()}</div>`;
+document.body.appendChild(el);const task=document.createElement("button");task.className="task";task.textContent=a.t;tasks.appendChild(task);W[k]={el,task};
+a.after&&a.after(el);
+el.addEventListener("pointerdown",()=>focus(k));
+task.onclick=()=>{el.classList.contains("off")||el.classList.contains("top")&&false?0:0;if(el.classList.contains("off")||!el.classList.contains("top"))focus(k);else{el.classList.add("off");task.classList.remove("on")}};
+el.querySelector("[data-m]").onclick=()=>{el.classList.add("off");task.classList.remove("on")};
+el.querySelector("[data-c]").onclick=()=>{el.remove();task.remove();delete W[k]};
+let max=false,sv;el.querySelector("[data-x]").onclick=()=>{if(max){el.style.cssText=sv;max=false}else{sv=el.style.cssText;el.style.cssText=`left:0;top:0;width:100%;height:calc(100% - 40px);z-index:${z}`;max=true}};
+const bar=el.querySelector(".bar");bar.onpointerdown=e=>{if(e.target.closest(".ctl")||max||innerWidth<=700)return;const dx=e.clientX-el.offsetLeft,dy=e.clientY-el.offsetTop;bar.setPointerCapture(e.pointerId);bar.onpointermove=m=>{el.style.left=Math.max(0,Math.min(innerWidth-120,m.clientX-dx))+"px";el.style.top=Math.max(0,Math.min(innerHeight-80,m.clientY-dy))+"px"};bar.onpointerup=()=>{bar.onpointermove=null}};
+focus(k)}
+const clk=document.getElementById("clock");(function t(){const d=new Date();clk.innerHTML=d.toLocaleTimeString([],{hour:"numeric",minute:"2-digit"})+"<br>"+d.toLocaleDateString([],{day:"numeric",month:"short",year:"numeric"});setTimeout(t,30000)})();
+open("about");setTimeout(()=>open("projects"),350);
+</script>
+</body>
+</html>
