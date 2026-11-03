@@ -100,374 +100,49 @@ section{padding:6rem 2.5rem}
 .contact-headline em{font-style:italic;color:var(--accent)}
 .contact-sub{color:var(--muted);font-size:16px;margin-bottom:3rem;line-height:1.7}
 .contact-links{display:flex;flex-direction:column;gap:0}
-.contact-row{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding:1.25rem 0;cursor:pointer}
+.contact-row{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding:1.5rem 0}
 .contact-row:last-child{border-bottom:1px solid var(--border)}
-.contact-row-label{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
-.contact-row-val{font-size:15px;color:var(--text);display:flex;align-items:center;gap:.5rem;transition:color .2s}
-.contact-row:hover .contact-row-val{color:var(--accent)}
-.arrow{font-size:18px;color:var(--muted)}
+.contact-type{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.contact-value{font-family:var(--serif);font-size:clamp(20px,2.5vw,28px);transition:color .2s}
+.contact-row:hover .contact-value{color:var(--accent)}
 
-footer{padding:2rem 2.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.footer-copy{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.footer-tag{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.footer-tag span{color:var(--accent)}
-
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
-.reveal.visible{opacity:1;transform:none}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-.cursor-line{position:fixed;top:0;left:0;width:1px;height:100vh;background:rgba(200,245,96,.06);pointer-events:none;transition:left .05s;z-index:999}
-
 @media(max-width:768px){
-  nav{padding:1rem 1.25rem}
+  nav{padding:1rem 1.5rem}
   .nav-links{display:none}
-  .hero{padding:0 1.25rem 4rem}
-  section{padding:4rem 1.25rem}
-  .about-grid{grid-template-columns:1fr}
-  .project-item{grid-template-columns:50px 1fr;gap:1rem}
-  .project-link{display:none}
-  footer{flex-direction:column;gap:.75rem;text-align:center}
+  section{padding:4rem 1.5rem}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .project-item{grid-template-columns:1fr;gap:1rem;padding:2rem 0}
+  .project-num{display:none}
+  .project-link{align-self:flex-start;margin-top:.5rem}
 }
 </style>
 </head>
 <body>
 
-<div class="cursor-line" id="cursorLine"></div>
-
-<nav id="nav">
-  <div class="nav-logo">MH.dev</div>
+<nav id="navbar">
+  <div class="nav-logo">HAMMAD.DEV // BACKEND</div>
   <div class="nav-links">
     <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Work</a>
-    <a href="#resume">Resume</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<section class="hero" id="top">
-  <div class="hero-bg-text">PRODUCTS</div>
-  <div class="hero-eyebrow">Software Developer · Backend, Full Stack & APIs · Open for Freelance Work</div>
-  <h1 class="hero-name">Muhammad<br/><em>Hammad</em></h1>
-  <p class="hero-desc">You have a business problem. I build the product that solves it — backend, database, auth, and the interface your customers click through. Not a prototype. Not a mockup. A system that stays up and works, like the one already live for a paying client right now.</p>
+<div class="hero">
+  <div class="hero-bg-text">ENGINEER</div>
+  <div class="hero-eyebrow">Muhammad Hammad // Software Engineer</div>
+  <h1 class="hero-name">Building high-performance, <em>fault-isolated</em> backend architectures.</h1>
+  <p class="hero-desc">Specializing in Python async environments, low-latency in-memory data designs, and robust database layers built to scale effectively.</p>
   <div class="hero-cta">
-    <a href="#contact" class="btn-primary">Message Me</a>
-    <a href="#projects" class="btn-ghost">See the Work</a>
+    <a href="#projects" class="btn-primary">View Systems</a>
+    <a href="#contact" class="btn-ghost">Let's Talk</a>
   </div>
   <div class="hero-scroll">
+    <span>Scroll to explore</span>
     <div class="scroll-line"></div>
-    scroll to explore
   </div>
-</section>
-
-<section id="about">
-  <div class="section-label">00 — About</div>
-  <div class="about-grid">
-    <div>
-      <h2 class="about-headline reveal">One developer, the <em>whole product</em></h2>
-      <div class="about-body reveal">
-        <p>I build backend-heavy products end to end — API, database, auth, admin, and a working interface on top — as one person, not a hand-off between five. That's fewer meetings, fewer miscommunications, and a system one person actually understands top to bottom.</p>
-        <p>I've shipped a production e-commerce platform for a paying client, live on Railway right now, and I'm currently building NexusAPI, a multi-tenant SaaS backend. Every project below is real and running — nothing here is a demo built just to look good on a portfolio.</p>
-      </div>
-    </div>
-    <div class="stats-grid reveal">
-      <div class="stat">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Production Projects</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">&lt;50ms</div>
-        <div class="stat-label">API Response Target</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">2027</div>
-        <div class="stat-label">BSE Graduation</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Debugged at 2am</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="section-label">01 — Services</div>
-  <div class="skills-wrap">
-    <div class="skill-group reveal" style="padding:2rem 0">
-      <div class="project-header" style="margin-bottom:.6rem">
-        <div class="project-name" style="font-size:22px">Backend & API Development</div>
-      </div>
-      <p class="project-desc" style="margin-bottom:0">Your app needs somewhere to store data, log users in safely, and handle requests without falling over. I build that layer — FastAPI or Flask, proper auth (JWT/OAuth2), validated data, a database structure that holds up as you grow.</p>
-    </div>
-    <div class="skill-group reveal" style="padding:2rem 0">
-      <div class="project-header" style="margin-bottom:.6rem">
-        <div class="project-name" style="font-size:22px">Full Product Builds</div>
-      </div>
-      <p class="project-desc" style="margin-bottom:0">You have an idea, not five separate contractors. I take it from nothing to a working product — backend, database, admin panel, and an interface your customers actually click through — as one person, start to finish.</p>
-    </div>
-    <div class="skill-group reveal" style="padding:2rem 0">
-      <div class="project-header" style="margin-bottom:.6rem">
-        <div class="project-name" style="font-size:22px">E-Commerce & Order Systems</div>
-      </div>
-      <p class="project-desc" style="margin-bottom:0">Catalog, cart, checkout, order tracking, and the email that confirms it. The parts of an online store that lose you money if they're built wrong — I've already shipped one of these live.</p>
-    </div>
-    <div class="skill-group reveal" style="padding:2rem 0">
-      <div class="project-header" style="margin-bottom:.6rem">
-        <div class="project-name" style="font-size:22px">Performance & Caching</div>
-      </div>
-      <p class="project-desc" style="margin-bottom:0">If your site is slow, it's costing you customers right now. I diagnose the bottleneck and fix it — Redis caching, async task queues so nothing blocks a response, and query-level tuning.</p>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="section-label">02 — Technical Skills</div>
-  <div class="skills-wrap">
-    <div class="skill-group reveal">
-      <div class="skill-group-row">
-        <span class="skill-cat">Languages</span>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">HTML/CSS</span>
-        </div>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-row">
-        <span class="skill-cat">Frameworks</span>
-        <div class="skill-tags">
-          <span class="skill-tag">FastAPI</span>
-          <span class="skill-tag">Flask</span>
-          <span class="skill-tag">SQLAlchemy</span>
-          <span class="skill-tag">Pydantic</span>
-        </div>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-row">
-        <span class="skill-cat">Databases</span>
-        <div class="skill-tags">
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">Redis</span>
-        </div>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-row">
-        <span class="skill-cat">Infrastructure</span>
-        <div class="skill-tags">
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Railway</span>
-          <span class="skill-tag">ARQ</span>
-          <span class="skill-tag">APScheduler</span>
-          <span class="skill-tag">Alembic</span>
-        </div>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-row">
-        <span class="skill-cat">Auth & Security</span>
-        <div class="skill-tags">
-          <span class="skill-tag">JWT</span>
-          <span class="skill-tag">OAuth2</span>
-          <span class="skill-tag">Bcrypt</span>
-          <span class="skill-tag">Argon2</span>
-          <span class="skill-tag">Rate Limiting</span>
-        </div>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-row">
-        <span class="skill-cat">Interface</span>
-        <div class="skill-tags">
-          <span class="skill-tag">Jinja2</span>
-          <span class="skill-tag">HTML/CSS</span>
-          <span class="skill-tag">JavaScript</span>
-        </div>
-      </div>
-    </div>
-    <div class="skill-group reveal">
-      <div class="skill-group-row">
-        <span class="skill-cat">Tooling</span>
-        <div class="skill-tags">
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">Postman</span>
-          <span class="skill-tag">VS Code</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="section-label">03 — Selected Work</div>
-  <div class="projects-wrap">
-
-    <div class="project-item reveal">
-      <div class="project-num">01</div>
-      <div class="project-content">
-        <div class="project-header">
-          <div class="project-name">Perfumania E-Commerce</div>
-          <span class="project-badge">Live in Production · Client Project</span>
-        </div>
-        <p class="project-desc">Built and shipped for a paying client — this one's the real proof. A working online store handling browsing, cart, checkout, order tracking, and email notifications, live and in use today.</p>
-        <ul class="project-bullets">
-          <li>Deployed on Railway with pydantic-settings env separation for dev/prod</li>
-          <li>Argon2 + Bcrypt dual-hashing strategy with session management</li>
-          <li>Transactional email via fastapi-mail for order confirmations and registration</li>
-          <li>Full order lifecycle tracking with PostgreSQL + SQLAlchemy ORM</li>
-        </ul>
-        <div class="project-stack">
-          <span class="stack-tag">FastAPI</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">SQLAlchemy</span>
-          <span class="stack-tag">Railway</span>
-          <span class="stack-tag">Jinja2</span>
-        </div>
-      </div>
-      <a href="https://perfumania-shop.up.railway.app" class="project-link" target="_blank">Live ↗</a>
-    </div>
-
-    <div class="project-item reveal">
-      <div class="project-num">02</div>
-      <div class="project-content">
-        <div class="project-header">
-          <div class="project-name">AI-Powered URL Shortener</div>
-          <span class="project-badge">Featured</span>
-        </div>
-        <p class="project-desc">A URL shortener that stays fast under real traffic instead of slowing down as it grows. Built solo: AI-generated slugs, a two-layer Redis cache, and background task queues so nothing blocks the response.</p>
-        <ul class="project-bullets">
-          <li>Two-layer Redis cache (L1 + L2) eliminates DB reads on hot URLs — p99 under 10ms</li>
-          <li>Groq AI slug generation offloaded to ARQ queue — API response under 50ms regardless of LLM latency</li>
-          <li>Atomic cache invalidation on URL expiry — no stale redirects ever served</li>
-          <li>JWT auth with per-user rate limiting enforced at middleware layer</li>
-        </ul>
-        <div class="project-stack">
-          <span class="stack-tag">FastAPI</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">Redis</span>
-          <span class="stack-tag">ARQ</span>
-          <span class="stack-tag">SQLAlchemy</span>
-          <span class="stack-tag">JWT</span>
-          <span class="stack-tag">APScheduler</span>
-        </div>
-      </div>
-      <a href="https://github.com/muhammads-git" class="project-link" target="_blank">GitHub ↗</a>
-    </div>
-
-    <div class="project-item reveal">
-      <div class="project-num">03</div>
-      <div class="project-content">
-        <div class="project-header">
-          <div class="project-name">LSC Marketplace Platform</div>
-        </div>
-        <p class="project-desc">A two-sided marketplace connecting service seekers with local providers across 6 professions — built solo, end to end, including role-based dashboards, messaging, and the booking engine underneath.</p>
-        <ul class="project-bullets">
-          <li>Three distinct user roles (seeker/provider/admin) with separate dashboards and workflows</li>
-          <li>Real-time messaging between customers and providers with booking status tracking</li>
-          <li>Parameterized SQL queries and Bcrypt hashing — SQL injection prevention from day one</li>
-          <li>Booking engine supporting both direct selection and open service requests</li>
-        </ul>
-        <div class="project-stack">
-          <span class="stack-tag">Flask</span>
-          <span class="stack-tag">MySQL</span>
-          <span class="stack-tag">Jinja2</span>
-          <span class="stack-tag">HTML/CSS</span>
-          <span class="stack-tag">JavaScript</span>
-        </div>
-      </div>
-      <a href="https://github.com/muhammads-git" class="project-link" target="_blank">GitHub ↗</a>
-    </div>
-
-    <div class="project-item reveal">
-      <div class="project-num">04</div>
-      <div class="project-content">
-        <div class="project-header">
-          <div class="project-name">NexusAPI — Multi-Tenant SaaS Backend</div>
-          <span class="project-badge">In Progress</span>
-        </div>
-        <p class="project-desc">A multi-tenant project-management backend, currently in active development — built to demonstrate tenant isolation, role permissions, and API design at SaaS scale.</p>
-        <ul class="project-bullets">
-          <li>Multi-tenant data isolation at the database layer, one backend serving many organizations</li>
-          <li>Role-based permission system scoped per tenant</li>
-          <li>Designed around the same API and auth patterns used in the shipped projects above</li>
-        </ul>
-        <div class="project-stack">
-          <span class="stack-tag">FastAPI</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">SQLAlchemy</span>
-          <span class="stack-tag">JWT</span>
-        </div>
-      </div>
-      <a href="https://github.com/muhammads-git" class="project-link" target="_blank">GitHub ↗</a>
-    </div>
-
-  </div>
-</section>
-
-<div class="resume-section reveal" id="resume">
-  <div class="resume-label">04 — Resume</div>
-  <h2 class="resume-headline">Hiring for a role, not a project? <em>Here's the resume.</em></h2>
-  <p style="color:var(--muted);font-size:14px;margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto">Formatted for backend engineering roles specifically — if you're a recruiter or hiring manager, start here instead.</p>
-  <a href="Muhammad_Hammad_Resume.pdf" download class="resume-btn">
-    ↓ Download Backend Resume (PDF)
-  </a>
 </div>
 
-<section id="contact">
-  <div class="section-label">05 — Contact</div>
-  <div class="contact-inner">
-    <h2 class="contact-headline reveal">Have a product to <em>build?</em></h2>
-    <p class="contact-sub reveal">Available for freelance backend and full-product builds — remote, any timezone. Tell me what you're building and I'll tell you honestly whether I'm the right fit.</p>
-    <div class="contact-links">
-      <a href="mailto:sirhammad760@gmail.com" class="contact-row reveal">
-        <span class="contact-row-label">Email</span>
-        <span class="contact-row-val">sirhammad760@gmail.com <span class="arrow">→</span></span>
-      </a>
-      <a href="https://linkedin.com/in/muhammad-hammad" class="contact-row reveal" target="_blank">
-        <span class="contact-row-label">LinkedIn</span>
-        <span class="contact-row-val">muhammad-hammad <span class="arrow">→</span></span>
-      </a>
-      <a href="https://github.com/muhammads-git" class="contact-row reveal" target="_blank">
-        <span class="contact-row-label">GitHub</span>
-        <span class="contact-row-val">muhammads-git <span class="arrow">→</span></span>
-      </a>
-      <a href="tel:+923497118947" class="contact-row reveal">
-        <span class="contact-row-label">Phone</span>
-        <span class="contact-row-val">+92 349 711 8947 <span class="arrow">→</span></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-copy">© 2025 Muhammad Hammad</div>
-  <div class="footer-tag">Available for freelance work · BSE @ Hazara University</div>
-</footer>
-
-<script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-revealEls.forEach(el => io.observe(el));
-
-const line = document.getElementById('cursorLine');
-document.addEventListener('mousemove', e => {
-  line.style.left = e.clientX + 'px';
-});
-</script>
-</body>
-</html>
