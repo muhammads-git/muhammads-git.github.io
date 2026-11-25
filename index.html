@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Muhammad Hammad | Software Engineer</title>
-<meta name="description" content="Backend engineer building fast, secure Python systems with FastAPI, PostgreSQL and Redis. Available for projects and development roles.">
+<meta name="description" content="Software engineer building backend systems and full web applications in Python with Flask, FastAPI, PostgreSQL, MySQL and Redis. Available for client projects and development roles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300..800&display=swap" rel="stylesheet">
@@ -28,21 +28,20 @@ h1{font-weight:600;font-size:clamp(46px,7.6vw,112px);line-height:.98;letter-spac
 h1 .wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em}h1 .wd i{display:inline-block;font-style:normal}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .hf{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:flex-end;justify-content:space-between;margin-top:48px}
-.hf p{max-width:40ch;color:#ffffffcc}
+.hf p{max-width:54ch;color:#ffffffcc}
 .chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{padding:6px 16px;border-radius:999px;background:#ffffff1f;font-size:14px;backdrop-filter:blur(8px)}
 h2{font-weight:600;font-size:clamp(36px,5.4vw,76px);line-height:1;letter-spacing:-.045em;margin:0 0 16px}
 section{padding:clamp(72px,10vw,140px) 0 0}
 .sub{color:var(--mute);max-width:56ch;margin-bottom:44px;font-size:19px}
 .vals{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .val{padding:32px;border-radius:28px;background:#fff;border:1px solid #e4e4df}
-.val b{display:block;font-size:clamp(44px,5vw,64px);font-weight:600;letter-spacing:-.05em;line-height:1}
-.val h3{font-size:22px;font-weight:600;letter-spacing:-.02em;margin:18px 0 8px}.val p{color:var(--mute)}
+.val h3{font-size:23px;font-weight:600;letter-spacing:-.025em;line-height:1.2;margin:0 0 10px}.val .st{display:inline-block;margin-top:18px;padding:5px 14px;border-radius:999px;background:var(--lime);font-size:13px;font-weight:600}#value h2{margin-bottom:40px}.vals{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.val p{color:var(--mute)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
 .card{display:flex;flex-direction:column;gap:14px;padding:34px;border-radius:28px;background:#fff;border:1px solid #e4e4df;transition:transform .4s,background .3s,color .3s}
-.card:hover{transform:translateY(-6px);background:var(--deep);color:#fff}.card:hover .m,.card:hover p{color:#ffffffb3}
+.card:hover{transform:translateY(-6px);background:var(--deep);color:#fff}.card:hover .m,.card:hover .d,.card:hover .ob li{color:#ffffffb3}
 .card.lead{background:var(--lime);border-color:var(--lime)}.card.lead:hover{background:var(--deep)}
 .card h3{font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-.035em;line-height:1.1}
-.m{font-size:14px;color:var(--mute)}.card p{color:#4a4a46}
+.m{font-size:14px;color:var(--mute)}.card .d,.ob li{color:#4a4a46}.ob{margin:12px 0 0;padding-left:20px;display:grid;gap:4px}
 .pf{font-weight:600;font-size:15px}
 .tg{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}.tg span{padding:4px 13px;border:1px solid #bdbdb6;border-radius:999px;font-size:13px}
 .card:hover .tg span{border-color:#ffffff55}
@@ -64,16 +63,11 @@ footer{padding:36px 0 48px;color:var(--mute);font-size:14px;display:flex;flex-wr
 <div><span class="tag">Software engineer</span>
 <h1 id="h1">I build systems that stay fast and secure.</h1>
 <div class="btns"><a class="rb fill" href="mailto:sirhammad760@gmail.com"><span>Hire me</span><span>Hire me</span></a><a class="rb" href="#work"><span>View my work</span><span>View my work</span></a></div></div>
-<div class="hf"><p>Muhammad Hammad. FastAPI, PostgreSQL and Redis systems, including a live e-commerce backend for a client. Available for projects and development roles.</p><div class="chips"><span>FastAPI</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span></div></div>
+<div class="hf"><p>I'm Muhammad Hammad, a software engineer who designs and builds backend systems and full web applications in Python. I work with Flask and FastAPI, PostgreSQL and MySQL, Redis and Docker, and I ship to production. Available for client projects and development roles.</p><div class="chips"><span>Flask</span><span>FastAPI</span><span>PostgreSQL</span><span>MySQL</span><span>Redis</span><span>Docker</span></div></div>
 </header></div>
 
 <div class="w">
-<section id="value"><h2>What you get.</h2><p class="sub">Three things I do well, each backed by a project you can inspect on GitHub.</p>
-<div class="vals">
-<div class="val"><b data-n="19" data-s=" ms">0</b><h3>Slow endpoints, fixed at the root</h3><p>I cut a live leaderboard from 12 seconds to 19 ms by moving ranking into a Redis Sorted Set instead of a full-table join.</p></div>
-<div class="val"><b data-n="4" data-s="-level">0</b><h3>Tenant data that stays separate</h3><p>I closed a cross-tenant leak by checking ownership from task to membership on every route, backed by row-level locks.</p></div>
-<div class="val"><b data-n="1" data-s=" live">0</b><h3>Shipped for a real client</h3><p>I delivered a perfume store backend that is live today, with images stored outside the app server so redeploys lose nothing.</p></div>
-</div></section>
+<section id="value"><h2>What I can do for you.</h2><div class="vals"><div class="val"><h3>Fast, reliable backends</h3><p>I build APIs and data layers with Flask and FastAPI, PostgreSQL and MySQL, and Redis caching. I find the real bottleneck before changing code, so slow systems become fast ones.</p><span class="st">Leaderboard: 12 s to 19 ms</span></div><div class="val"><h3>Complete products, not just endpoints</h3><p>I take an idea from database design to a working web app: roles, authentication, bookings, dashboards, reviews and notifications.</p><span class="st">Local Service Connect</span></div><div class="val"><h3>Secure multi-user systems</h3><p>I design for many users sharing one system: ownership checks on every route, tenant isolation, row-level locking and safe concurrent writes.</p><span class="st">4-level ownership check</span></div><div class="val"><h3>Delivered to real clients</h3><p>I scope, build and deploy production work. A client's e-commerce backend is live, with deployment and file storage handled so redeploys lose nothing.</p><span class="st">Live client store</span></div></div></section>
 
 <section id="work"><h2>Selected work.</h2><p class="sub">My own product first, then client e-commerce and the systems that show backend depth.</p><div class="grid" id="g"></div></section>
 
@@ -88,14 +82,14 @@ footer{padding:36px 0 48px;color:var(--mute);font-size:14px;display:flex;flex-wr
 <script src="gsap.min.js"></script><script src="ScrollTrigger.min.js"></script>
 <script>
 const P=[
-["Local Service Connect","My own product · Two-sided SaaS marketplace","A marketplace where people book trusted local professionals (plumbers, electricians, repairs) in their own town instead of searching for them blindly. Users request services, browse providers and read ratings and reviews. Providers manage bookings, build a reputation and track their performance. Booking, provider discovery, reviews and in-app notifications work today; payments are the one integration left before it can run as a business.","Own idea, designed and built end to end",["Flask","MySQL","Python"],1,[["sc-dashboard.webp","ServiceConnect user dashboard: top-rated professional and available providers with ratings and Book Service buttons",1183,634],["serviceconnect-1.webp","ServiceConnect sign-up: join as a user to find home services or as a provider to offer services",1314,599],["serviceconnect-3.webp","ServiceConnect provider dashboard with bookings, completion rate, repeat clients and tips",1190,634]]],
+["Local Service Connect","My own product · Two-sided SaaS marketplace","<strong>Local Service Connect</strong> is a two-sided marketplace platform that bridges the gap between service seekers and service providers. Users can request services or browse available providers, while service professionals accept jobs, communicate with customers and build their reputation through ratings and reviews.<ul class='ob'><li>Discover and book local services</li><li>Providers manage bookings and customer interactions</li><li>Real-time notifications and messaging</li><li>Admin panel for platform management</li><li>Secure authentication and data protection</li></ul>","Own idea, built end to end · payments are the last integration before launch",["Flask","MySQL","Python"],1,[["sc-dashboard.webp","ServiceConnect user dashboard: top-rated professional and available providers with ratings and Book Service buttons",1183,634],["serviceconnect-1.webp","ServiceConnect sign-up: join as a user to find home services or as a provider to offer services",1314,599],["serviceconnect-3.webp","ServiceConnect provider dashboard with bookings, completion rate, repeat clients and tips",1190,634]]],
 ["Perfume store backend","Client project · Jun–Jul 2026","An e-commerce backend for a real client, delivered and live. Product images moved into Supabase Object Storage with pointers in PostgreSQL, so uploads survive every redeploy.","Live in production",["FastAPI","PostgreSQL","Jinja2","Supabase Storage","Railway"],0],
 ["ByteBattle","Sep–Oct 2026","A game backend with a live leaderboard. A full-table JOIN on every refresh became a Redis Sorted Set with an atomic write-through to PostgreSQL, which stays the source of truth.","12 s to 19 ms median latency",["FastAPI","Redis ZSET","PostgreSQL"]],
 ["NexusAPI","May–Jun 2026","A multi-tenant project management backend. Every route verifies the ownership chain, writes use row-level locks, and hot reads sit behind a write-through Redis cache.","4-level ownership check · 5 min cache TTL",["FastAPI","PostgreSQL","Redis","WebSockets","SQLAlchemy Async"]],
 ["VoicOps","Aug 2026 · Hackathon","Speak your infrastructure and get validated Docker configs and Alibaba Cloud Terraform back. Built for the AI Alibaba Hackathon Pakistan and selected for the national build phase. A self-healing loop repairs each generated file until it passes linting, and fuzzy correction fixes speech-recognition errors before generation.","Self-healing validation · fuzzy speech correction",["FastAPI","Docker","Terraform","Alibaba Cloud"],0,[["voicops-1.webp","VoicOps home page: Speak your infra, deploy in seconds",1338,628],["voicops-2.webp","VoicOps capabilities: voice to Docker, self-healing validation, Alibaba Cloud Terraform, fuzzy correction",1030,546],["voicops-3.webp","VoicOps output: heard and understood transcript with generated docker-compose.yml",860,567]]],
 ["AI URL shortener","Jan–Apr 2026","A short-link API where heavy AI work runs on an ARQ queue and a two-layer Redis index lets one update clear every cached copy of a link.","API responses under 50 ms",["FastAPI","PostgreSQL","Redis","ARQ"]]];
-const SK=[["Backend and APIs","Python, FastAPI, Flask, REST design, WebSockets, SQLAlchemy (async)"],["Data and caching","PostgreSQL, SQL, Redis Sorted Sets, cache invalidation, Supabase Storage"],["Async and queues","asyncio, ARQ task queue, row-level locking, background workers"],["Delivery","Docker, Docker Compose, Terraform, GitHub Actions, Locust, Git"]];
-g.innerHTML=[...P].sort((a,b)=>(b[6]?1:0)-(a[6]?1:0)).map(p=>{const t=`<span class="m">${p[1]}</span><h3>${p[0]}</h3><p>${p[2]}</p><div class="pf">${p[3]}</div><div class="tg">${p[4].map(x=>`<span>${x}</span>`).join("")}</div>`;return p[6]?`<article class="card wide${p[5]?" lead":""}"><div class="txt">${t}</div><div class="shots">${p[6].map(x=>`<button type="button" data-src="${x[0]}" data-alt="${x[1]}" aria-label="Enlarge: ${x[1]}"><img src="${x[0]}" alt="${x[1]}" width="${x[2]}" height="${x[3]}" loading="lazy"></button>`).join("")}<small>Click a screenshot to enlarge</small></div></article>`:`<article class="card${p[5]?" lead":""}">${t}</article>`}).join("");
+const SK=[["Backend and APIs","Python, FastAPI, Flask, REST design, WebSockets, SQLAlchemy (async)"],["Data and caching","PostgreSQL, MySQL, SQL, Redis Sorted Sets, cache invalidation, Supabase Storage"],["Async and queues","asyncio, ARQ task queue, row-level locking, background workers"],["Delivery","Docker, Docker Compose, Terraform, GitHub Actions, Locust, Git"]];
+g.innerHTML=[...P].sort((a,b)=>(b[6]?1:0)-(a[6]?1:0)).map(p=>{const t=`<span class="m">${p[1]}</span><h3>${p[0]}</h3><div class="d">${p[2]}</div><div class="pf">${p[3]}</div><div class="tg">${p[4].map(x=>`<span>${x}</span>`).join("")}</div>`;return p[6]?`<article class="card wide${p[5]?" lead":""}"><div class="txt">${t}</div><div class="shots">${p[6].map(x=>`<button type="button" data-src="${x[0]}" data-alt="${x[1]}" aria-label="Enlarge: ${x[1]}"><img src="${x[0]}" alt="${x[1]}" width="${x[2]}" height="${x[3]}" loading="lazy"></button>`).join("")}<small>Click a screenshot to enlarge</small></div></article>`:`<article class="card${p[5]?" lead":""}">${t}</article>`}).join("");
 document.querySelectorAll(".shots button").forEach(b=>b.onclick=()=>{const i=lb.querySelector("img");i.src=b.dataset.src;i.alt=b.dataset.alt;lb.showModal()});lb.onclick=()=>lb.close();
 s.innerHTML=SK.map(k=>`<div><h3>${k[0]}</h3><p style="color:#4a4a46">${k[1]}</p></div>`).join("");
 h1.innerHTML=h1.textContent.split(" ").map(w=>`<span class="wd"><i>${w}</i></span>`).join(" ");
