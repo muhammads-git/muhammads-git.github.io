@@ -24,7 +24,7 @@ nav b{font-size:20px;font-weight:700;letter-spacing:-.03em}nav div{display:flex;
 .hero>img{position:absolute;right:0;bottom:-6%;height:112%;width:auto;max-width:62%;object-fit:cover;object-position:50% 0;mask-image:linear-gradient(90deg,transparent,#000 28%);z-index:0}
 .hero>*:not(img){position:relative;z-index:1}
 .tag{display:inline-block;padding:7px 18px;border:1px solid #ffffff55;border-radius:999px;font-size:14px;backdrop-filter:blur(6px)}
-h1{font-weight:600;font-size:clamp(46px,7.6vw,112px);line-height:.98;letter-spacing:-.05em;max-width:9.5em;margin:26px 0 30px}
+h1{font-weight:600;font-size:clamp(42px,5.8vw,92px);line-height:1;letter-spacing:-.05em;margin:26px 0 30px}.hl i{color:var(--lime)}@media(min-width:821px){.hero>div:nth-of-type(1){max-width:52%}.hero>img{max-width:46%}}
 h1 .wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em}h1 .wd i{display:inline-block;font-style:normal}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .hf{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:flex-end;justify-content:space-between;margin-top:48px}
@@ -47,6 +47,7 @@ section{padding:clamp(72px,10vw,140px) 0 0}
 .card:hover .tg span{border-color:#ffffff55}
 .card.wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:clamp(24px,4vw,56px)}.card.wide .txt{flex:1.15;display:flex;flex-direction:column;gap:14px;min-width:0}.shots{flex:1;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}.shots button{all:unset;cursor:zoom-in;display:block;overflow:hidden;border-radius:16px;border:1px solid #d8d8d2;aspect-ratio:16/10;background:#fff}.shots button:first-child{grid-column:1/-1;aspect-ratio:16/9}.shots button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}.shots img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}.shots button:hover img{transform:scale(1.05)}.shots small{grid-column:1/-1;font-size:13px;color:var(--mute)}.card:hover .shots small{color:#ffffffb3}
 #lb{border:0;background:none;padding:0;margin:auto;max-width:94vw;max-height:94vh}#lb::backdrop{background:#000d;backdrop-filter:blur(6px)}#lb img{display:block;max-width:94vw;max-height:92vh;border-radius:16px;cursor:zoom-out}
+#hire{border:0;background:none;padding:0;margin:auto;width:min(560px,94vw)}#hire::backdrop{background:#000c;backdrop-filter:blur(8px)}.hp{position:relative;background:var(--deep);color:#fff;border-radius:28px;padding:clamp(24px,4vw,40px);border:1px solid #ffffff22}.hp h3{font-size:clamp(26px,4vw,34px);font-weight:600;letter-spacing:-.03em;line-height:1.1}.hp>p{color:#ffffffb3;margin:8px 0 20px}.hp .x{position:absolute;top:14px;right:18px;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer}.opt{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.opt button{padding:8px 16px;border:1px solid #ffffff44;border-radius:999px;background:none;color:#fff;font:inherit;font-size:14px;cursor:pointer}.opt button.on{background:var(--lime);color:var(--ink);border-color:var(--lime)}.hp textarea,.hp input{display:block;width:100%;margin-bottom:12px;padding:14px 16px;border:1px solid #ffffff33;border-radius:14px;background:#ffffff0d;color:#fff;font:inherit;resize:vertical}.hp ::placeholder{color:#ffffff80}.hp .rb{background:none;color:#fff;font-family:inherit;cursor:pointer}.hp .rb.fill{background:var(--lime);color:var(--ink)}
 .sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
 .sk div{padding:28px;border-radius:24px;background:#fff;border:1px solid #e4e4df}.sk h3{font-size:19px;margin-bottom:14px}
 .cta{margin-top:clamp(72px,10vw,140px);border-radius:36px;background:var(--deep);color:#fff;padding:clamp(36px,7vw,96px)}
@@ -62,7 +63,7 @@ footer{padding:36px 0 48px;color:var(--mute);font-size:14px;display:flex;flex-wr
 <img src="photo.jpg" width="720" height="1290" alt="Portrait of Muhammad Hammad">
 <div><span class="tag">Software engineer</span>
 <h1 id="h1">I build systems that stay fast and secure.</h1>
-<div class="btns"><a class="rb fill" href="mailto:sirhammad760@gmail.com"><span>Hire me</span><span>Hire me</span></a><a class="rb" href="#work"><span>View my work</span><span>View my work</span></a></div></div>
+<div class="btns"><a class="rb fill" href="mailto:sirhammad760@gmail.com" data-hire><span>Hire me</span><span>Hire me</span></a><a class="rb" href="#work"><span>View my work</span><span>View my work</span></a></div></div>
 <div class="hf"><p>I'm Muhammad Hammad, a software engineer who designs and builds backend systems and full web applications in Python. I work with Flask and FastAPI, PostgreSQL and MySQL, Redis and Docker, and I ship to production. Available for client projects and development roles.</p><div class="chips"><span>Flask</span><span>FastAPI</span><span>PostgreSQL</span><span>MySQL</span><span>Redis</span><span>Docker</span></div></div>
 </header></div>
 
@@ -74,10 +75,11 @@ footer{padding:36px 0 48px;color:var(--mute);font-size:14px;display:flex;flex-wr
 <section id="skills"><h2>Skills.</h2><p class="sub">Grouped by what I use them for.</p><div class="sk" id="s"></div></section>
 
 <div class="cta" id="contact"><h2>Let's build your backend.</h2><p>Tell me about your project, or reach out if your team needs a Python engineer.</p>
-<div class="btns"><a class="rb fill" href="mailto:sirhammad760@gmail.com"><span>sirhammad760@gmail.com</span><span>sirhammad760@gmail.com</span></a></div>
-<div class="btns"><a class="rb" target="_blank" rel="noopener" href="https://github.com/muhammads-git"><span>GitHub</span><span>GitHub</span></a><a class="rb" target="_blank" rel="noopener" href="https://www.linkedin.com/in/muhammmad81"><span>LinkedIn</span><span>LinkedIn</span></a></div></div>
+<div class="btns"><a class="rb fill" href="#hire" data-hire><span>Start a project</span><span>Start a project</span></a><a class="rb" href="mailto:sirhammad760@gmail.com"><span>sirhammad760@gmail.com</span><span>sirhammad760@gmail.com</span></a></div>
+<div class="btns"><a class="rb" href="tel:+923409366586"><span>0340 9366586</span><span>0340 9366586</span></a><a class="rb" target="_blank" rel="noopener" href="https://wa.me/923409366586"><span>WhatsApp</span><span>WhatsApp</span></a><a class="rb" target="_blank" rel="noopener" href="https://github.com/muhammads-git"><span>GitHub</span><span>GitHub</span></a><a class="rb" target="_blank" rel="noopener" href="https://www.linkedin.com/in/muhammmad81"><span>LinkedIn</span><span>LinkedIn</span></a></div></div>
 <footer><span>BS Software Engineering, Hazara University · 2023–2027</span><span>Mansehra, KPK, Pakistan · Working remotely</span></footer>
 </div>
+<dialog id="hire"><div class="hp"><button class="x" data-close aria-label="Close">&times;</button><h3>Tell me about your project</h3><p>Pick what fits, add a line or two, and send it straight to me.</p><div class="opt" role="group" aria-label="Project type"><button type="button" class="on">Web app</button><button type="button">API or backend</button><button type="button">E-commerce store</button><button type="button">Full-time role</button><button type="button">Something else</button></div><input id="hn" placeholder="Your name" autocomplete="name"><textarea id="hm" rows="4" placeholder="What are you building, and what do you need from me?"></textarea><div class="btns"><button type="button" class="rb fill" id="hw"><span>Send on WhatsApp</span><span>Send on WhatsApp</span></button><button type="button" class="rb" id="he"><span>Send by email</span><span>Send by email</span></button></div></div></dialog>
 <dialog id="lb"><img alt=""></dialog>
 <script src="gsap.min.js"></script><script src="ScrollTrigger.min.js"></script>
 <script>
@@ -91,8 +93,15 @@ const P=[
 const SK=[["Backend and APIs","Python, FastAPI, Flask, REST design, WebSockets, SQLAlchemy (async)"],["Data and caching","PostgreSQL, MySQL, SQL, Redis Sorted Sets, cache invalidation, Supabase Storage"],["Async and queues","asyncio, ARQ task queue, row-level locking, background workers"],["Delivery","Docker, Docker Compose, Terraform, GitHub Actions, Locust, Git"]];
 g.innerHTML=[...P].sort((a,b)=>(b[6]?1:0)-(a[6]?1:0)).map(p=>{const t=`<span class="m">${p[1]}</span><h3>${p[0]}</h3><div class="d">${p[2]}</div><div class="pf">${p[3]}</div><div class="tg">${p[4].map(x=>`<span>${x}</span>`).join("")}</div>`;return p[6]?`<article class="card wide${p[5]?" lead":""}"><div class="txt">${t}</div><div class="shots">${p[6].map(x=>`<button type="button" data-src="${x[0]}" data-alt="${x[1]}" aria-label="Enlarge: ${x[1]}"><img src="${x[0]}" alt="${x[1]}" width="${x[2]}" height="${x[3]}" loading="lazy"></button>`).join("")}<small>Click a screenshot to enlarge</small></div></article>`:`<article class="card${p[5]?" lead":""}">${t}</article>`}).join("");
 document.querySelectorAll(".shots button").forEach(b=>b.onclick=()=>{const i=lb.querySelector("img");i.src=b.dataset.src;i.alt=b.dataset.alt;lb.showModal()});lb.onclick=()=>lb.close();
+const H=document.getElementById("hire"),T=H.querySelector(".opt");let ty="Web app";
+T.onclick=e=>{const b=e.target.closest("button");if(!b)return;T.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));ty=b.textContent};
+const msg=()=>{const n=hn.value.trim(),m=hm.value.trim();return`Hi Muhammad, ${n?"I'm "+n+". ":""}I'm reaching out about: ${ty}.${m?"\n\n"+m:""}`};
+hw.onclick=()=>window.open("https://wa.me/923409366586?text="+encodeURIComponent(msg()),"_blank","noopener");
+he.onclick=()=>{location.href="mailto:sirhammad760@gmail.com?subject="+encodeURIComponent("Project enquiry: "+ty)+"&body="+encodeURIComponent(msg())};
+document.querySelectorAll("[data-hire]").forEach(a=>a.onclick=e=>{e.preventDefault();H.showModal();window.gsap&&gsap.fromTo(".hp",{y:40,scale:.96,opacity:0},{y:0,scale:1,opacity:1,duration:.5,ease:"power3.out"})});
+H.onclick=e=>{if(e.target===H||e.target.closest("[data-close]"))H.close()};
 s.innerHTML=SK.map(k=>`<div><h3>${k[0]}</h3><p style="color:#4a4a46">${k[1]}</p></div>`).join("");
-h1.innerHTML=h1.textContent.split(" ").map(w=>`<span class="wd"><i>${w}</i></span>`).join(" ");
+h1.innerHTML=h1.textContent.split(" ").map(w=>`<span class="wd${/^(systems|secure\.?)$/.test(w)?" hl":""}"><i>${w}</i></span>`).join(" ");
 if(window.gsap){gsap.registerPlugin(ScrollTrigger);
 gsap.matchMedia().add("(prefers-reduced-motion: no-preference)",()=>{
  gsap.timeline({defaults:{ease:"power4.out"}}).from(".hero",{y:60,opacity:0,duration:1}).from(".hero>img",{scale:1.15,x:60,opacity:0,duration:1.6},"<").from(".tag",{y:20,opacity:0,duration:.7},"-=1").from(".wd i",{yPercent:115,duration:1,stagger:.06},"-=.9").from(".btns .rb,.hf>*",{y:24,opacity:0,duration:.8,stagger:.1},"-=.6");
